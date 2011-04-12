@@ -1,0 +1,1 @@
+slideshow -t slippy.txt .\IoC.markdown -o Slideshow
