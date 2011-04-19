@@ -7,26 +7,27 @@ presdate: 4/19/2011
 Agenda
 ===================================================================
 * Why IoC
-* Topics
-    * Basics
-    * Lifetime management
-    * Other scenarios
+* Before and After
+* Lifetime management
 
 Why IoC
 =======================================================================
 * IoC containers were create to solve problems with the classic application architectures
+
 ![Classic App Architecture](https://docs.google.com/drawings/pub?id=12ZD30D5Npiqc9koURuvPXix2LD2575RfMAO9uvRIRZA&w=960&h=720)
 
 
 Problems with the Classic App Architecture
 =======================================================================
 * Sharing configuration info
+
 ![Classic App Architecture](https://docs.google.com/drawings/pub?id=1w6hCF8HcQ2huuuTPgA8KM0CvYCLvkETZoQ7pw4NM-qA&w=960&h=720)
 
 
 Problems (2) with the Classic App Architecture
 =======================================================================
-* Sharing configuration info
+* The containment model means that IDisposability infects everthing
+
 ![Classic App Architecture](https://docs.google.com/drawings/pub?id=14pmzJ9SekRBpA8zzhplA8Bqd0mme2p9KA0pUD9LIMxU&w=960&h=720)
 
 
@@ -36,8 +37,10 @@ Problems (3) with the Classic App Architecture
     * The singleton anti-pattern
 * Implicit shared static global state
     * The config
+* High coupling
 * Hard to manage late bindings
 * Plethora of custom factory classes to address the above
+
 
 Sample Classic Code
 =======================================================================
@@ -49,6 +52,7 @@ Sample Classic Code
 
 With Ioc
 =======================================================================
+
 1. A bit more setup code, but in return, much simpler implementations
 2. Built-in flexibility to send in replacement implementations
 3. No more shared global state
@@ -58,13 +62,31 @@ With Ioc
 
 With Ioc Code
 =======================================================================
+Using Autofac...
+
+* [Register the container](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Global.asax.cs)
+* [Controllers just ask for what they need](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Controllers/HomeController.cs)
+* [Lower coupling](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/MyModel.cs) - look how the model is simpler, but has added more depenencies
+
+Anonymous factories
+=======================================================================
+    builder.Register<DBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
+	builder.Register<HttpContextBase>(ctx => FakeHttpContext());
+
+Lifetime management and Creating more than one
+=======================================================================
+When does my stuff get cleaned up?
+
+With MVC apps, at the end of each request (by default)
+Can override in many ways, `.SingleInstance()` and `Owned<T>` are two methods.
+
+Let's look at [AdvancedModel](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/AdvancedModel.cs) and 
+[LifetimeManagementModel](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/LifetimeManagementModel.cs)
 
 
-Advanced use cases
+Unit testing w/ Autofac
 =======================================================================
 
-1. Lifetime management
-2. More than one
-3. Anonymous factories
-
-
+Where's the code and stuff?
+=======================================================================
+[https://github.com/ScottWeinstein/IoC-Demos](https://github.com/ScottWeinstein/IoC-Demos)
