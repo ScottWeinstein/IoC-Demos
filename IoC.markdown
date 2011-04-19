@@ -26,7 +26,7 @@ Problems with the Classic App Architecture
 
 Problems (2) with the Classic App Architecture
 =======================================================================
-* The containment model means that IDisposability infects everthing
+* The containment model means that IDisposability _infects_ everthing
 
 ![Classic App Architecture](https://docs.google.com/drawings/pub?id=14pmzJ9SekRBpA8zzhplA8Bqd0mme2p9KA0pUD9LIMxU&w=960&h=720)
 
@@ -52,7 +52,6 @@ Sample Classic Code
 
 With Ioc
 =======================================================================
-
 1. A bit more setup code, but in return, much simpler implementations
 2. Built-in flexibility to send in replacement implementations
 3. No more shared global state
@@ -66,11 +65,11 @@ Using Autofac...
 
 * [Register the container](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Global.asax.cs)
 * [Controllers just ask for what they need](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Controllers/HomeController.cs)
-* [Lower coupling](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/MyModel.cs) - look how the model is simpler, but has added more depenencies
+* [Insulated from changes](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/MyModel.cs) - look how the model is simpler, but has added more depenencies
 
 Anonymous factories
 =======================================================================
-    builder.Register<DBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
+    builder.Register<DBEntities>(ctx => new DBEntities(ctx.Resolve<Config>().ConnectionString));
 	builder.Register<HttpContextBase>(ctx => FakeHttpContext());
 
 Lifetime management and Creating more than one
@@ -86,6 +85,19 @@ Let's look at [AdvancedModel](https://github.com/ScottWeinstein/IoC-Demos/blob/m
 
 Unit testing w/ Autofac
 =======================================================================
+[AutofacLifetimeFacts](https://github.com/ScottWeinstein/IoC-Demos/blob/master/UnitTestingWithIoC/AutofacLifetimeFacts.cs)
+
+Integration with non Web apps
+=======================================================================
+* WCF - similar model to MVC
+* WPF/Silverlight - fine w/ ViewModel first frameworks, such as Caliburn.* If you're coding View-first, integrating IoC can be hard
+
+Pitfalls
+=======================================================================
+* Setups can get complex
+* Resoultion failure is at runtime, exceptions messages can be... obscure
+
+
 
 Where's the code and stuff?
 =======================================================================
