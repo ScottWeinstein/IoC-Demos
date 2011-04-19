@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonContainerBased", "NonCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerBased", "ContainerBased\ContainerBased.csproj", "{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingWithIoC", "UnitTestingWithIoC\UnitTestingWithIoC.csproj", "{96913F28-5B07-4A50-9F4E-A480A0A5BE30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

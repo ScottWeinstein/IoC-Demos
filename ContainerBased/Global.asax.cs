@@ -17,6 +17,16 @@ namespace ContainerBased
     {
         protected void Application_Start()
         {
+            var container = BuildAutofac(false).Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            AreaRegistration.RegisterAllAreas();
+            RegisterGlobalFilters(GlobalFilters.Filters);
+            RegisterRoutes(RouteTable.Routes);
+        }
+
+        public ContainerBuilder BuildAutofac(bool isTest)
+        {
             var thisAppAssembly = typeof(MvcApplication).Assembly;
             var builder = new ContainerBuilder();
             builder.RegisterAssemblyTypes(thisAppAssembly);
@@ -25,12 +35,7 @@ namespace ContainerBased
             // provide a factory method for creating new DBEntities
             builder.Register<DBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
 
-            var container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
-            AreaRegistration.RegisterAllAreas();
-            RegisterGlobalFilters(GlobalFilters.Filters);
-            RegisterRoutes(RouteTable.Routes);
+            return builder;
         }
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
