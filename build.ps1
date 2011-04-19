@@ -1,1 +1,2 @@
-slideshow -t slippy.txt .\IoC.markdown -o Slideshow
+$ENV:HOME=''
+slideshow .\IoC.markdown -o Slideshow

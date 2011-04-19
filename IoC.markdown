@@ -1,38 +1,45 @@
 author: @ScottWeinstein
 title: IoC crash course
-company: Lab49
-email: sweinstein@lab49.com
-presdate: 4/19/2011
-footer-top-right:  IoC w/ Autofac
-footer-bottom-left:  
-footer-bottom-right:  
 footer: @ScottWeinstein
-{{ gradient blue white }}
-
+subfooter: Lab49
+presdate: 4/19/2011
 
 Agenda
 ===================================================================
 * Why IoC
-* What's we'll cover
 * Topics
     * Basics
     * Lifetime management
     * Other scenarios
 
-
 Why IoC
 =======================================================================
-* IoC containers were create to solve specific problems
+* IoC containers were create to solve problems with the classic application architectures
+![Classic App Architecture](https://docs.google.com/drawings/pub?id=12ZD30D5Npiqc9koURuvPXix2LD2575RfMAO9uvRIRZA&w=960&h=720)
 
+
+Problems with the Classic App Architecture
+=======================================================================
+* Sharing configuration info
+![Classic App Architecture](https://docs.google.com/drawings/pub?id=1w6hCF8HcQ2huuuTPgA8KM0CvYCLvkETZoQ7pw4NM-qA&w=960&h=720)
+
+
+Problems (2) with the Classic App Architecture
+=======================================================================
+* Sharing configuration info
+![Classic App Architecture](https://docs.google.com/drawings/pub?id=14pmzJ9SekRBpA8zzhplA8Bqd0mme2p9KA0pUD9LIMxU&w=960&h=720)
+
+
+Problems (3) with the Classic App Architecture
+=======================================================================
 * Static global state
     * The singleton anti-pattern
 * Implicit shared static global state
     * The config
-* Hard to manage late binding of Interfaces
+* Hard to manage late bindings
 * Plethora of custom factory classes to address the above
 
-
-What's we'll cover
+Sample Classic Code
 =======================================================================
 
 * Sample MVC app written w/o IoC
