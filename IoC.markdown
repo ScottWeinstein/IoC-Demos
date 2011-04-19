@@ -41,17 +41,24 @@ Problems (3) with the Classic App Architecture
 
 Sample Classic Code
 =======================================================================
+* [Controller creates the model](https://github.com/ScottWeinstein/IoC-Demos/blob/master/NonContainerBased/Controllers/HomeController.cs)
+* [Model creates the DB connection](https://github.com/ScottWeinstein/IoC-Demos/blob/master/NonContainerBased/Models/MyModel.cs)
+* which reaches out and gets it's connection string
+* And they all implement IDisposable
 
-* Sample MVC app written w/o IoC
-* Same app refactored to use IoC w/ Autofac
 
-
-Benefits
+With Ioc
 =======================================================================
-
 1. A bit more setup code, but in return, much simpler implementations
 2. Built-in flexibility to send in replacement implementations
 3. No more shared global state
+
+![Ioc Arch](https://docs.google.com/drawings/pub?id=13MbbO6mMIVl8ywfQFRxf7EhEujnxUIMA0rWobn7MtaQ&w=960&h=720)
+
+
+With Ioc Code
+=======================================================================
+
 
 Advanced use cases
 =======================================================================
@@ -59,6 +66,5 @@ Advanced use cases
 1. Lifetime management
 2. More than one
 3. Anonymous factories
-
 
 

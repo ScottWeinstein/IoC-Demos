@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonContainerBased", "NonContainerBased\NonContainerBased.csproj", "{8C87F813-315C-4A67-9275-78190562C207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerBased", "ContainerBased\ContainerBased.csproj", "{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C87F813-315C-4A67-9275-78190562C207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C87F813-315C-4A67-9275-78190562C207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C87F813-315C-4A67-9275-78190562C207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C87F813-315C-4A67-9275-78190562C207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
