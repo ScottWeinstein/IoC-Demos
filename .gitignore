@@ -1,2 +1,4 @@
 Slideshow/
-bin/
+*/bin/
+*/obj/
+NuGet.exe
