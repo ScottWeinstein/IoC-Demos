@@ -20,6 +20,7 @@ $wd = Get-ScriptDirectory
 BootStrapNuGet $wd
 $ngexe = "$wd\NuGet.exe"
 Get-ChildItem -Recurse -Filter packages.config | % { & $ngexe install $_.FullName -o Packages }
+msbuild Demos.sln
 
-#$ENV:HOME=''
-#slideshow .\IoC.markdown -o Slideshow
+$ENV:HOME=''
+slideshow .\IoC.markdown -o Slideshow
