@@ -3,3 +3,5 @@ Slideshow/
 */obj/
 NuGet.exe
 Packages
+*.csproj.user
+*.suo
