@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace NonContainerBased.Models
 {
     public class MyModel : IDisposable

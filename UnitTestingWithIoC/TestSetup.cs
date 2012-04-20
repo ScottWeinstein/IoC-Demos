@@ -18,7 +18,7 @@ namespace UnitTestingWithIoC
         static TestSetup()
         {
             var app = new global::ContainerBased.MvcApplication();
-            var builder = app.BuildAutofac(isTest: true);
+            var builder = app.ConfigureAutofac(isTest: true);
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
             builder.Register<HttpContextBase>(ctx => FakeHttpContext()).SingleInstance();
             Container = builder.Build();

@@ -65,7 +65,7 @@ Using Autofac...
 
 * [Register the container](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Global.asax.cs)
 * [Controllers just ask for what they need](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Controllers/HomeController.cs)
-* [Insulated from changes](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/MyModel.cs) - look how the model is simpler, but has added more depenencies
+* [Insulated from changes](https://github.com/ScottWeinstein/IoC-Demos/blob/master/ContainerBased/Models/MyModel.cs) - look how the model is simpler, but has added more dependencies
 
 Anonymous factories
 =======================================================================
@@ -95,7 +95,7 @@ Integration with non Web apps
 Pitfalls
 =======================================================================
 * Setups can get complex
-* Resoultion failure is at runtime, exceptions messages can be... obscure
+* Resolution failure is at runtime, exceptions messages can be... obscure
 
 
 
@@ -105,6 +105,6 @@ Where's the code and stuff?
 
 How to build the presentation
 =======================================================================
-1. http://rubyinstaller.org/downloads/
-2. gem install slideshow
-3. build.ps1
+1. Install [pandoc](http://johnmacfarlane.net/pandoc/)
+1. msbuild Demos.sln
+1. pandoc -t slidy -s .\README.md -o pres.html

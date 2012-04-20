@@ -15,6 +15,7 @@ namespace ContainerBased.Models
             _dbFactory = dbFactory;
             _ownedFactory = ownedFactory;
             _moreAdv = moreAdv;
+            // What do you think the difference is between Lazy<DBEntities> and Func<DBEntities>?
         }
 
         public void Proccess()

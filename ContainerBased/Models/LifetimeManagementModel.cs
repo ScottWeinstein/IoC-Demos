@@ -19,8 +19,7 @@ namespace ContainerBased.Models
                 {
                     using (var localscope = _scope.BeginLifetimeScope())
                     {
-                        var db = localscope.Resolve<DBEntities>();
-                        // var q = localscope.Resolve<T>();
+                        var db = localscope.Resolve<DBEntities>(); // will get cleaned up at the end of the using block
                     }
                 });
             }

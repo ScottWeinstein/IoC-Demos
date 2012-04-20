@@ -4,14 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonContainerBased", "NonContainerBased\NonContainerBased.csproj", "{8C87F813-315C-4A67-9275-78190562C207}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerBased", "ContainerBased\ContainerBased.csproj", "{7C3F2EC5-9D3B-40EB-9347-F3CBCBFF8EFB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0235A9D8-D42D-4EA1-9E29-B82CA848EA78} = {0235A9D8-D42D-4EA1-9E29-B82CA848EA78}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingWithIoC", "UnitTestingWithIoC\UnitTestingWithIoC.csproj", "{96913F28-5B07-4A50-9F4E-A480A0A5BE30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DCDCED5C-0421-4AC8-97F7-3CBC99F9EA98}"
 	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{0235A9D8-D42D-4EA1-9E29-B82CA848EA78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,10 @@ Global
 		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96913F28-5B07-4A50-9F4E-A480A0A5BE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0235A9D8-D42D-4EA1-9E29-B82CA848EA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0235A9D8-D42D-4EA1-9E29-B82CA848EA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0235A9D8-D42D-4EA1-9E29-B82CA848EA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0235A9D8-D42D-4EA1-9E29-B82CA848EA78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

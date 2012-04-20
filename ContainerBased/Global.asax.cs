@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Autofac.Integration.Wcf;
 using ContainerBased.Models;
+using System.ServiceModel;
+using ContainerBased.DataService;
 [assembly: ComVisible(false)]
 
 namespace ContainerBased
@@ -17,23 +18,44 @@ namespace ContainerBased
     {
         protected void Application_Start()
         {
-            var container = BuildAutofac(false).Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            var builder = ConfigureAutofac(isTest: false);
+            var container = builder.Build();
 
+
+
+            // Wire Autofac into ASP.NET MVC
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container)); 
+
+
+
+
+
+            // Std MVC stuff
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
 
-        public ContainerBuilder BuildAutofac(bool isTest)
+        public ContainerBuilder ConfigureAutofac(bool isTest)
         {
             var thisAppAssembly = typeof(MvcApplication).Assembly;
             var builder = new ContainerBuilder();
-            builder.RegisterAssemblyTypes(thisAppAssembly);
-            builder.RegisterControllers(thisAppAssembly);
+
+            builder.RegisterAssemblyTypes(thisAppAssembly); // All classes are wired up for instance scope
+            builder.RegisterControllers(thisAppAssembly); // wire up all controller classes to be HTTPRequestScoped
 
             // provide a factory method for creating new DBEntities
             builder.Register<DBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
+
+
+            // config WCF service
+
+            builder.Register(c => new ChannelFactory<IDataService>(new BasicHttpBinding(),
+                            new EndpointAddress("http://localhost:47758/DataService.svc")))
+                            .SingleInstance();
+
+            builder.Register(c => c.Resolve<ChannelFactory<IDataService>>().CreateChannel())
+                   .UseWcfSafeRelease();
 
             return builder;
         }
