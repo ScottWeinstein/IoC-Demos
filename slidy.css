@@ -1,0 +1,697 @@
+/* line 4, ../sass/slidy.scss */
+body {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  background-color: white;
+  font-family: "Gill Sans MT", "Gill Sans", GillSans, sans-serif;
+  font-size: 14pt;
+}
+
+/* line 15, ../sass/slidy.scss */
+div.toolbar {
+  position: fixed;
+  z-index: 200;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.2em;
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 60%;
+  color: red;
+  background-color: #f0f0f0;
+  border-top: solid 1px #b4b4b4;
+}
+
+/* line 27, ../sass/slidy.scss */
+div.toolbar span.copyright {
+  color: black;
+  margin-left: 0.5em;
+}
+
+/* line 32, ../sass/slidy.scss */
+div.initial_prompt {
+  position: absolute;
+  z-index: 1000;
+  bottom: 1.2em;
+  width: 100%;
+  background-color: #c8c8c8;
+  opacity: 0.35;
+  background-color: #c8c8c8;
+  cursor: pointer;
+}
+
+/* line 43, ../sass/slidy.scss */
+div.initial_prompt p.help {
+  text-align: center;
+}
+
+/* line 47, ../sass/slidy.scss */
+div.initial_prompt p.close {
+  text-align: right;
+  font-style: italic;
+}
+
+/* line 52, ../sass/slidy.scss */
+div.slidy_toc {
+  position: absolute;
+  z-index: 300;
+  width: 60%;
+  max-width: 30em;
+  height: 30em;
+  overflow: auto;
+  top: auto;
+  right: auto;
+  left: 4em;
+  bottom: 4em;
+  padding: 1em;
+  background: #f0f0f0;
+  border-style: solid;
+  border-width: 2px;
+  font-size: 60%;
+}
+
+/* line 70, ../sass/slidy.scss */
+div.slidy_toc .toc_heading {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: #b4b4b4;
+  border-bottom-width: 1px;
+}
+
+/* line 80, ../sass/slidy.scss */
+div.slide {
+  z-index: 20;
+  margin: 0 0 0 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 0;
+  clear: both;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 120%;
+  background-color: transparent;
+}
+
+/* line 97, ../sass/slidy.scss */
+div.background {
+  display: none;
+}
+
+/* line 101, ../sass/slidy.scss */
+div.handout {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 106, ../sass/slidy.scss */
+div.slide.titlepage {
+  text-align: center;
+}
+
+/* line 110, ../sass/slidy.scss */
+div.slide.titlepage h1 {
+  padding-top: 10%;
+  margin-right: 0;
+}
+
+/* line 115, ../sass/slidy.scss */
+div.slide h1 {
+  padding-left: 0;
+  padding-right: 20pt;
+  padding-top: 4pt;
+  padding-bottom: 4pt;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 20pt;
+  margin-bottom: 0.5em;
+  display: block;
+  font-size: 160%;
+  line-height: 1.2em;
+  background: transparent;
+  background-color: #28343b;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF28343B', endColorstr='#FFB5BDC8');
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #28343b), color-stop(7%, #828c95), color-stop(100%, #b5bdc8));
+  background-image: -webkit-linear-gradient(left, #28343b 0%, #828c95 7%, #b5bdc8 100%);
+  background-image: -moz-linear-gradient(left, #28343b 0%, #828c95 7%, #b5bdc8 100%);
+  background-image: -o-linear-gradient(left, #28343b 0%, #828c95 7%, #b5bdc8 100%);
+  background-image: -ms-linear-gradient(left, #28343b 0%, #828c95 7%, #b5bdc8 100%);
+  background-image: linear-gradient(left, #28343b 0%, #828c95 7%, #b5bdc8 100%);
+  text-indent: 120px;
+}
+
+/* line 135, ../sass/slidy.scss */
+div.toc {
+  position: absolute;
+  top: auto;
+  bottom: 4em;
+  left: 4em;
+  right: auto;
+  width: 60%;
+  max-width: 30em;
+  height: 30em;
+  border: solid thin black;
+  padding: 1em;
+  background: #f0f0f0;
+  color: black;
+  z-index: 300;
+  overflow: auto;
+  display: block;
+  visibility: visible;
+}
+
+/* line 154, ../sass/slidy.scss */
+div.toc-heading {
+  width: 100%;
+  border-bottom: solid 1px #b4b4b4;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* line 161, ../sass/slidy.scss */
+img {
+  image-rendering: optimize-quality;
+}
+
+/* line 165, ../sass/slidy.scss */
+pre {
+  font-size: 80%;
+  font-weight: bold;
+  line-height: 120%;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-style: solid;
+  border-left-width: 1em;
+  border-top-width: thin;
+  border-right-width: thin;
+  border-bottom-width: thin;
+  border-color: #95ABD0;
+  color: #00428C;
+  background-color: #E4E5E7;
+}
+
+/* line 183, ../sass/slidy.scss */
+li pre {
+  margin-left: 0;
+}
+
+/* line 185, ../sass/slidy.scss */
+blockquote {
+  font-style: italic;
+}
+
+/* line 187, ../sass/slidy.scss */
+img {
+  background-color: transparent;
+}
+
+/* line 189, ../sass/slidy.scss */
+p.copyright {
+  font-size: smaller;
+}
+
+/* line 191, ../sass/slidy.scss */
+.center {
+  text-align: center;
+}
+
+/* line 192, ../sass/slidy.scss */
+.footnote {
+  font-size: smaller;
+  margin-left: 2em;
+}
+
+/* line 194, ../sass/slidy.scss */
+a img {
+  border-width: 0;
+  border-style: none;
+}
+
+/* line 196, ../sass/slidy.scss */
+a:visited {
+  color: navy;
+}
+
+/* line 197, ../sass/slidy.scss */
+a:link {
+  color: navy;
+}
+
+/* line 198, ../sass/slidy.scss */
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+/* line 199, ../sass/slidy.scss */
+a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+/* line 201, ../sass/slidy.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 202, ../sass/slidy.scss */
+.navbar a:link {
+  color: white;
+}
+
+/* line 203, ../sass/slidy.scss */
+.navbar a:visited {
+  color: yellow;
+}
+
+/* line 204, ../sass/slidy.scss */
+.navbar a:active {
+  color: red;
+}
+
+/* line 205, ../sass/slidy.scss */
+.navbar a:hover {
+  color: red;
+}
+
+/* line 207, ../sass/slidy.scss */
+ul {
+  list-style-type: square;
+}
+
+/* line 208, ../sass/slidy.scss */
+ul ul {
+  list-style-type: disc;
+}
+
+/* line 209, ../sass/slidy.scss */
+ul ul ul {
+  list-style-type: circle;
+}
+
+/* line 210, ../sass/slidy.scss */
+ul ul ul ul {
+  list-style-type: disc;
+}
+
+/* line 211, ../sass/slidy.scss */
+li {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+/* line 212, ../sass/slidy.scss */
+li li {
+  font-size: 85%;
+  font-style: italic;
+}
+
+/* line 213, ../sass/slidy.scss */
+li li li {
+  font-size: 85%;
+  font-style: normal;
+}
+
+/* line 216, ../sass/slidy.scss */
+div dt {
+  margin-left: 0;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+/* line 223, ../sass/slidy.scss */
+div dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* line 229, ../sass/slidy.scss */
+p, pre, ul, ol, blockquote, h2, h3, h4, h5, h6, dl, table {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* line 234, ../sass/slidy.scss */
+h2 {
+  color: red;
+}
+
+/* line 238, ../sass/slidy.scss */
+p.subhead {
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+/* line 240, ../sass/slidy.scss */
+.smaller {
+  font-size: smaller;
+}
+
+/* line 241, ../sass/slidy.scss */
+.bigger {
+  font-size: 130%;
+}
+
+/* line 243, ../sass/slidy.scss */
+td, th {
+  padding: 0.2em;
+}
+
+/* line 245, ../sass/slidy.scss */
+ul {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+/* line 250, ../sass/slidy.scss */
+ol {
+  margin: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0;
+}
+
+/* line 255, ../sass/slidy.scss */
+ul {
+  list-style-type: square;
+}
+
+/* line 256, ../sass/slidy.scss */
+ul ul {
+  list-style-type: disc;
+}
+
+/* line 257, ../sass/slidy.scss */
+ul ul ul {
+  list-style-type: circle;
+}
+
+/* line 258, ../sass/slidy.scss */
+ul ul ul ul {
+  list-style-type: disc;
+}
+
+/* line 260, ../sass/slidy.scss */
+ul li {
+  list-style: square;
+  margin: 0.1em 0em 0.6em 0;
+  padding: 0 0 0 0;
+  line-height: 140%;
+}
+
+/* line 267, ../sass/slidy.scss */
+ol li {
+  margin: 0.1em 0em 0.6em 1.5em;
+  padding: 0 0 0 0px;
+  line-height: 140%;
+  list-style-type: decimal;
+}
+
+/* line 274, ../sass/slidy.scss */
+li ul li {
+  font-size: 85%;
+  font-style: italic;
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+
+/* line 281, ../sass/slidy.scss */
+li li ul li {
+  font-size: 85%;
+  font-style: normal;
+  list-style-type: circle;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+
+/* line 288, ../sass/slidy.scss */
+li li li ul li {
+  list-style-type: disc;
+  background: transparent;
+  padding: 0 0 0 0;
+}
+
+/* line 294, ../sass/slidy.scss */
+li ol li {
+  list-style-type: decimal;
+}
+
+/* line 299, ../sass/slidy.scss */
+li li ol li {
+  list-style-type: decimal;
+}
+
+/*
+ setting class="outline on ol or ul makes it behave as an
+ ouline list where blocklevel content in li elements is
+ hidden by default and can be expanded or collapsed with
+ mouse click. Set class="expand" on li to override default
+*/
+/* line 310, ../sass/slidy.scss */
+ol.outline li:hover {
+  cursor: pointer;
+}
+
+/* line 311, ../sass/slidy.scss */
+ol.outline li.nofold:hover {
+  cursor: default;
+}
+
+/* line 313, ../sass/slidy.scss */
+ul.outline li:hover {
+  cursor: pointer;
+}
+
+/* line 314, ../sass/slidy.scss */
+ul.outline li.nofold:hover {
+  cursor: default;
+}
+
+/* line 316, ../sass/slidy.scss */
+ol.outline {
+  list-style: decimal;
+}
+
+/* line 317, ../sass/slidy.scss */
+ol.outline ol {
+  list-style-type: lower-alpha;
+}
+
+/* line 319, ../sass/slidy.scss */
+ol.outline li.nofold {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/nofold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 323, ../sass/slidy.scss */
+ol.outline li.unfolded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 327, ../sass/slidy.scss */
+ol.outline li.folded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 331, ../sass/slidy.scss */
+ol.outline li.unfolded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold.gif) no-repeat 0px 0.5em;
+}
+
+/* line 335, ../sass/slidy.scss */
+ol.outline li.folded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold.gif) no-repeat 0px 0.5em;
+}
+
+/* line 340, ../sass/slidy.scss */
+ul.outline li.nofold {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/nofold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 344, ../sass/slidy.scss */
+ul.outline li.unfolded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 348, ../sass/slidy.scss */
+ul.outline li.folded {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold-dim.gif) no-repeat 0px 0.5em;
+}
+
+/* line 352, ../sass/slidy.scss */
+ul.outline li.unfolded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/fold.gif) no-repeat 0px 0.5em;
+}
+
+/* line 356, ../sass/slidy.scss */
+ul.outline li.folded:hover {
+  padding: 0 0 0 20px;
+  background: transparent url(../graphics/unfold.gif) no-repeat 0px 0.5em;
+}
+
+/* for slides with class "title" in table of contents */
+/* line 362, ../sass/slidy.scss */
+a.titleslide {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*
+ hide images for work around for save as bug
+ where browsers fail to save images used by CSS
+*/
+/* line 368, ../sass/slidy.scss */
+img.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 369, ../sass/slidy.scss */
+div.initial_prompt {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 371, ../sass/slidy.scss */
+div.slide {
+  visibility: visible;
+  position: inherit;
+}
+
+/* line 375, ../sass/slidy.scss */
+div.handout {
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-color: black;
+}
+
+@media screen {
+  /* line 382, ../sass/slidy.scss */
+  .hidden {
+    display: none;
+    visibility: visible;
+  }
+
+  /* line 384, ../sass/slidy.scss */
+  div.slide.hidden {
+    display: block;
+    visibility: visible;
+  }
+
+  /* line 385, ../sass/slidy.scss */
+  div.handout.hidden {
+    display: block;
+    visibility: visible;
+  }
+
+  /* line 386, ../sass/slidy.scss */
+  div.background {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 387, ../sass/slidy.scss */
+  body.single_slide div.initial_prompt {
+    display: block;
+    visibility: visible;
+  }
+
+  /* line 388, ../sass/slidy.scss */
+  body.single_slide div.background {
+    display: block;
+    visibility: visible;
+  }
+
+  /* line 389, ../sass/slidy.scss */
+  body.single_slide div.background.hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 390, ../sass/slidy.scss */
+  body.single_slide .invisible {
+    visibility: hidden;
+  }
+
+  /* line 391, ../sass/slidy.scss */
+  body.single_slide .hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 392, ../sass/slidy.scss */
+  body.single_slide div.slide {
+    position: absolute;
+  }
+
+  /* line 393, ../sass/slidy.scss */
+  body.single_slide div.handout {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media print {
+  /* line 397, ../sass/slidy.scss */
+  .hidden {
+    display: block;
+    visibility: visible;
+  }
+
+  /* line 399, ../sass/slidy.scss */
+  div.slide pre {
+    font-size: 60%;
+    padding-left: 0.5em;
+  }
+
+  /* line 400, ../sass/slidy.scss */
+  div.toolbar {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 401, ../sass/slidy.scss */
+  div.slidy_toc {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 402, ../sass/slidy.scss */
+  div.background {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 403, ../sass/slidy.scss */
+  div.slide {
+    page-break-before: always;
+  }
+
+  /* :first-child isn't reliable for print media */
+  /* line 405, ../sass/slidy.scss */
+  div.slide.first-slide {
+    page-break-before: avoid;
+  }
+}
