@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\IDBEntities.cs" />
     <Compile Include="Models\LifetimeManagementModel.cs" />
     <Compile Include="Models\MyModel.cs" />
     <Compile Include="Service References\DataService\Reference.cs">

@@ -24,7 +24,7 @@ namespace ContainerBased.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class DBEntities : ObjectContext
+    public partial class DBEntities : ObjectContext, IDBEntities
     {
         #region Constructors
     

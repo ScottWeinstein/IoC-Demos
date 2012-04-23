@@ -6,7 +6,6 @@ namespace WcfService
 {
     public class DataService : IDataService
     {
-
         public DataService(IDataDb db)
         {
         }

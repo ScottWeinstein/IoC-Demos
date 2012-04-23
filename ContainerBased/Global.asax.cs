@@ -45,11 +45,9 @@ namespace ContainerBased
             builder.RegisterControllers(thisAppAssembly); // wire up all controller classes to be HTTPRequestScoped
 
             // provide a factory method for creating new DBEntities
-            builder.Register<DBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
-
+            builder.Register<IDBEntities>(ctx => new DBEntities(ConfigurationManager.ConnectionStrings["DBEntities"].ConnectionString));
 
             // config WCF service
-
             builder.Register(c => new ChannelFactory<IDataService>(new BasicHttpBinding(),
                             new EndpointAddress("http://localhost:47758/DataService.svc")))
                             .SingleInstance();

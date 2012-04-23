@@ -4,15 +4,18 @@ namespace ContainerBased.Models
 {
     public class MyModel
     {
-        private readonly DBEntities _db;
+        private readonly IDBEntities _db;
         private readonly IDataService _ds;
         
-        public MyModel(DBEntities db, AdvancedModel am, IDataService ds)
+        public MyModel(IDBEntities db, AdvancedModel am, IDataService ds)
         {
             _db = db;
             _ds = ds;
+        }
 
-            var res = _ds.GetData(1);
+        public string SaveSomething()
+        {
+            return _ds.GetData(2);
         }
     }
 }

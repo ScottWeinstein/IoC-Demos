@@ -1,15 +1,33 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
+using System.Security.Principal;
 using System.Web;
 using Autofac;
+using ContainerBased.DataService;
+using ContainerBased.Models;
 using Moq;
 using Xunit;
-using System.Security.Principal;
 
 namespace UnitTestingWithIoC
 {
+    public class TestModel
+    {
+        public TestModel()
+        {
+        }
+
+        [Fact]
+        public void ModelSave_Calls_SaveService()
+        {
+            var m = TestSetup.Container.Resolve<Mock<IDataService>>();
+            m.Setup(ids => ids.GetData(2)).Returns("hello 2");
+
+            var mm = TestSetup.Container.Resolve<MyModel>();
+            mm.SaveSomething();
+            Assert.NotNull(mm.SaveSomething());
+        }
+    }
 
     public class TestSetup
     {
@@ -19,7 +37,15 @@ namespace UnitTestingWithIoC
         {
             var app = new global::ContainerBased.MvcApplication();
             var builder = app.ConfigureAutofac(isTest: true);
+
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
+
+            builder.Register<IDBEntities>(ctx => new Mock<IDBEntities>().Object);
+
+            var mids = new Mock<IDataService>();
+            builder.RegisterInstance(mids);
+            builder.Register<IDataService>(ctx => mids.Object);
+
             builder.Register<HttpContextBase>(ctx => FakeHttpContext()).SingleInstance();
             Container = builder.Build();
         }
